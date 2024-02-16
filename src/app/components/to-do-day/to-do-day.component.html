@@ -1,0 +1,48 @@
+<div class="contenedor-principal vh-100" [ngClass]="{ 'dark-theme': darkMode }">
+  <div class="img-fondo w-100">
+    <img class="w-100" [src]="darkDay">
+  </div>
+  <div class="container d-flex justify-content-center w-100" >
+    <div class="card transparencia border border-0">
+      <div class="container d-flex justify-content-between">
+        <h1>TO DO</h1>
+        <button (click)="toggleDarkTheme()" class="button-dark">C</button>
+      </div>
+      <div class="mt-3 mb-3 ">
+        <input class="w-100 p-2  border border-0 rounded-1" type="text" placeholder="Escribe Aca tu Tarea" [(ngModel)]="newTaskDescription">
+      </div>
+      <div class="container inferior-card rounded-1 shadow-lg" [ngClass]="{ 'contenedor-principal-dark': darkMode }">
+        <ul>
+          <li class="d-flex w-100 p-2 borde-delgado" *ngFor="let task of tasks; let index = index">
+            <input class="p-2" type="checkbox" [checked]="task.completed">
+          <!-- <p>{{ task.id }}</p> -->
+            <p class="p-2" [class.completed]="task.completed">{{ task.description }}</p>
+          <!-- <p>{{ task.completed}}</p> -->
+            <button class=" ms-auto p-2 border border-0" (click)="deleteTask(index)">X</button>
+          <!-- <button (click)="completedTask(task)" >Completada</button>
+          <button (click)="noCompleted(task)" >Sin completar</button> -->
+
+         </li>
+        </ul>
+      <div class="container d-flex justify-content-around">
+        <div>
+          <button class="border-0 fs-6">items</button>
+        </div>
+        <div>
+          <button class="border-0 fs-6">All</button>
+          <button class="border-0 fs-6">Active</button>
+          <button class="border-0 fs-6">Completed</button>
+        </div>
+        <div>
+          <button class="border-0 fs-6">Clear Completed</button>
+        </div>
+      </div>
+      <button class="border border-0" (click)="newTask()">Agregar</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+
+
+

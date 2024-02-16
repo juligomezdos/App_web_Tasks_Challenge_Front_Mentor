@@ -1,0 +1,97 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+
+
+button {
+  background-color: transparent;
+}
+
+.completed {
+  text-decoration: line-through;
+  background-color: aqua;
+}
+
+ul {
+  list-style-type: none;
+}
+
+h1 {
+  color: var(--Very-Light-Gray);
+  font-weight: bold;
+}
+
+/* Estilo personalizado para el checkbox */
+input[type="checkbox"] {
+  appearance: none; /* Oculta el estilo predeterminado del navegador */
+  -webkit-appearance: none; /* Para navegadores basados en WebKit como Chrome y Safari */
+  -moz-appearance: none; /* Para navegadores basados en Gecko como Firefox */
+  width: 15px; /* Define el tamaño del checkbox */
+  height: 15px; /* Define el tamaño del checkbox */
+  border-radius: 50%; /* Hace que el checkbox sea redondo */
+  border: 1px solid hsl(237, 14%, 26%); /* Añade un borde */
+  outline: none; /* Elimina el contorno predeterminado al enfocar */
+  cursor: pointer; /* Cambia el cursor al pasar sobre el checkbox */
+}
+
+/* Estilo del checkbox cuando está marcado */
+input[type="checkbox"]:checked {
+  background-color: #007bff; /* Cambia el color de fondo cuando el checkbox está marcado */
+}
+
+.img-fondo {
+  position: absolute;
+}
+
+.card {
+  position: relative;
+  top: 70px;
+}
+
+.inferior-card {
+  background-color: var(--Very-Light-Gray);
+}
+
+.transparencia {
+  background-color: transparent;
+}
+
+.Light-Grayish-Blue {
+  color: var(--Light-Grayish-Blue);
+}
+
+.borde-delgado {
+  border-bottom: 0.2px solid var(--DLight-Grayish-Blue);
+}
+
+.Very-Dark-Grayish-Blue {
+  color: var(--DVery-Dark-Grayish-Blue);
+}
+
+.contenedor-principal {
+  background-color: var(--Very-Light-Gray);
+  font-size: 18px;
+  font-family: 'Josefin Sans', sans-serif;
+}
+
+.contenedor-principal-dark {
+  background-color: var(--Very-Dark-Desaturated-Blue);
+}
+
+
+.dark-theme {
+  color: var(--Very-Light-Gray);
+  background-color: var(--Very-Dark-Blue);
+}
+
+
+.button-dark {
+  border: none;
+  background-color: transparent;
+  font-size: 50px;
+}
+
+
