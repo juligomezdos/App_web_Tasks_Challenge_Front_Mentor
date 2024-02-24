@@ -1,7 +1,7 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { FormsModule } from '@angular/forms'
-import { Task } from '../../../models/tasks.models'
+import { FormsModule } from '@angular/forms';
+import { Task } from '../../../models/tasks.models';
 
 @Component({
   selector: 'app-to-do-day',
@@ -12,12 +12,15 @@ import { Task } from '../../../models/tasks.models'
 })
 export class ToDoDayComponent {
 
+  // ----------------------------------  PROPIEDADES ------------------------------------------
   darkMode: boolean = false;
-  darkDay: string = '../../../assets/images/bg-desktop-light.jpg'
+  darkDay: string = '../../../assets/images/bg-desktop-light.jpg';
+  darkNightIcon: string = '../../../assets/images/icon-moon.svg';
 
   toggleDarkTheme() {
     this.darkMode = !this.darkMode;
     this.darkDay = this.darkMode ? '../../../assets/images/bg-desktop-dark.jpg' : '../../../assets/images/bg-desktop-light.jpg';
+    this.darkNightIcon = this.darkMode ? '../../../assets/images/icon-sun.svg' : '../../../assets/images/icon-moon.svg';
   }
 
   tasks: Task[] = [
@@ -25,51 +28,66 @@ export class ToDoDayComponent {
         id: 1,
         description: "Tarea 1",
         completed: false,
+        check: false,
       },
       {
         id: 2,
         description: "Tarea 2",
         completed: false,
+        check: false,
       },
       {
         id: 3,
         description: "Tarea 3",
         completed: false,
+        check: false,
       },
       {
         id: 4,
         description: "Tarea 4",
         completed: false,
+        check: false,
       },
     ];
 
   newTaskDescription: string = '';
+
+// ----------------------------------  MÉTODOS ------------------------------------------
 
   newTask() {
     let nuevaTask = { // creamos una variable con todo lo que lleva la tarea
       id: this.tasks.length + 1, // Aumentamos una unidad a la longitad para crearle el id
       description: this.newTaskDescription, //la descripcion va a ser la que escriba en la nueva tarea
       completed: false, // el estado por defecto quedara en false "No realizada"
+      check: false,
     };
     this.tasks.push(nuevaTask); // empujamos la tarea en el array
     this.newTaskDescription = ''; // volvemos a dejar el input vacio
   };
 
-  // updateTaskStatus(task: any) {
-  //   task.completed = !task.completed;
-  // }
-
   deleteTask(index: number) {
-    this.tasks.splice(index, 1) // eliminamos por medio de splice que pide el indice y la cantidad
-  }
+    this.tasks.splice(index, 1); // eliminamos por medio de splice que pide el indice y la cantidad
+  };
 
-  // completedTask(task:any) {
-  //     task.completed = true;
-  // }
+  selectAll() {
+    this.tasks.forEach(task => task.check = true); // colocamos en true todas la tareas
+  };
 
-  // noCompleted(task: any) {
-  //   task.completed = false;
-  // }
+  taskActive() {
+    this.tasks = this.tasks.filter(task => !task.completed); // muestra solo las tareas que estan activas
+  };
 
+  taskCompleted() {
+    this.tasks.forEach(task => {  // generamos un bucle que recorra todo el array de tareas
+      if(task.check === true) {   // creamos la condicion que solo funcione si check es true
+        task.completed = true;    // le decimos que lo que debe de hacer es que las task pasen a true
+      }
+      task.check = false;         // Dejamos el check como estaba
+    });
+  };
+
+  deleteTaskCompleted() {
+    this.tasks = this.tasks.filter(task => !task.completed); // mostramos las tasks que no estan completas
+  };
 }
 

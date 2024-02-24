@@ -81,12 +81,10 @@ input[type="checkbox"]:checked {
   background-color: var(--Very-Dark-Desaturated-Blue);
 }
 
-
 .dark-theme {
   color: var(--Very-Light-Gray);
   background-color: var(--Very-Dark-Blue);
 }
-
 
 .button-dark {
   border: none;
@@ -94,4 +92,6 @@ input[type="checkbox"]:checked {
   font-size: 50px;
 }
 
-
+.fuente-10 {
+  font-size: 12px;
+}
