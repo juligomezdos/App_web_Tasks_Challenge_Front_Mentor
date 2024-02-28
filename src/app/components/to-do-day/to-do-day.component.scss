@@ -4,15 +4,24 @@
   box-sizing: border-box;
 }
 
-
+.inactive {
+  display: none;
+}
+.active {
+  display: block;
+}
 
 button {
   background-color: transparent;
 }
 
+.btn-AllTasks:hover {
+  color: var(--Bright-Blue); /* Cambia el color de fondo a azul cuando el mouse está sobre el botón */
+}
+
 .completed {
   text-decoration: line-through;
-  background-color: aqua;
+  color: var(--Dark-Grayish-Blue);
 }
 
 ul {
@@ -32,14 +41,14 @@ input[type="checkbox"] {
   width: 15px; /* Define el tamaño del checkbox */
   height: 15px; /* Define el tamaño del checkbox */
   border-radius: 50%; /* Hace que el checkbox sea redondo */
-  border: 1px solid hsl(237, 14%, 26%); /* Añade un borde */
+  border: 1px solid var(--Dark-Grayish-Blue); /* Añade un borde */
   outline: none; /* Elimina el contorno predeterminado al enfocar */
   cursor: pointer; /* Cambia el cursor al pasar sobre el checkbox */
 }
 
 /* Estilo del checkbox cuando está marcado */
 input[type="checkbox"]:checked {
-  background-color: #007bff; /* Cambia el color de fondo cuando el checkbox está marcado */
+  background-image: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 }
 
 .img-fondo {
@@ -59,16 +68,8 @@ input[type="checkbox"]:checked {
   background-color: transparent;
 }
 
-.Light-Grayish-Blue {
-  color: var(--Light-Grayish-Blue);
-}
-
 .borde-delgado {
-  border-bottom: 0.2px solid var(--DLight-Grayish-Blue);
-}
-
-.Very-Dark-Grayish-Blue {
-  color: var(--DVery-Dark-Grayish-Blue);
+  border-bottom: 0.1px solid var(--DCVery-Dark-Grayish-Blue);
 }
 
 .contenedor-principal {
@@ -79,10 +80,14 @@ input[type="checkbox"]:checked {
 
 .contenedor-principal-dark {
   background-color: var(--Very-Dark-Desaturated-Blue);
+  color: var(--Light-Grayish-Blue);
+}
+
+.Dark-Grayish-Blue {
+  color: var(--Dark-Grayish-Blue);
 }
 
 .dark-theme {
-  color: var(--Very-Light-Gray);
   background-color: var(--Very-Dark-Blue);
 }
 

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Task } from '../../../models/tasks.models';
@@ -12,6 +12,8 @@ import { Task } from '../../../models/tasks.models';
 })
 export class ToDoDayComponent {
 
+  @Output() darkModeChanged = new EventEmitter<boolean>();
+
   // ----------------------------------  PROPIEDADES ------------------------------------------
   darkMode: boolean = false;
   darkDay: string = '../../../assets/images/bg-desktop-light.jpg';
@@ -21,32 +23,37 @@ export class ToDoDayComponent {
     this.darkMode = !this.darkMode;
     this.darkDay = this.darkMode ? '../../../assets/images/bg-desktop-dark.jpg' : '../../../assets/images/bg-desktop-light.jpg';
     this.darkNightIcon = this.darkMode ? '../../../assets/images/icon-sun.svg' : '../../../assets/images/icon-moon.svg';
+    this.darkModeChanged.emit(this.darkMode);
   }
 
   tasks: Task[] = [
       {
         id: 1,
-        description: "Tarea 1",
+        description: "Completed online javaScript course",
         completed: false,
         check: false,
+        deleteIconTask: false,
       },
       {
         id: 2,
-        description: "Tarea 2",
+        description: "Jog around the park 3x",
         completed: false,
         check: false,
+        deleteIconTask: false,
       },
       {
         id: 3,
-        description: "Tarea 3",
+        description: "10 minures meditation",
         completed: false,
         check: false,
+        deleteIconTask: false,
       },
       {
         id: 4,
-        description: "Tarea 4",
+        description: "Read for 1 hour",
         completed: false,
         check: false,
+        deleteIconTask: false,
       },
     ];
 
@@ -60,6 +67,7 @@ export class ToDoDayComponent {
       description: this.newTaskDescription, //la descripcion va a ser la que escriba en la nueva tarea
       completed: false, // el estado por defecto quedara en false "No realizada"
       check: false,
+      deleteIconTask: false,
     };
     this.tasks.push(nuevaTask); // empujamos la tarea en el array
     this.newTaskDescription = ''; // volvemos a dejar el input vacio
@@ -89,5 +97,14 @@ export class ToDoDayComponent {
   deleteTaskCompleted() {
     this.tasks = this.tasks.filter(task => !task.completed); // mostramos las tasks que no estan completas
   };
+
+  showDeleteButton(index: number) {
+    this.tasks[index].deleteIconTask = true;
+  }
+
+  hideDeleteButton(index: number) {
+    this.tasks[index].deleteIconTask = false;
+  }
 }
+
 

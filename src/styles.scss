@@ -5,7 +5,7 @@
   --Very-Light-Gray: hsl(0, 0%, 98%);
   --Very-Light-Grayish-Blue: hsl(236, 33%, 92%);
   --Light-Grayish-Blue: hsl(233, 11%, 84%);
-  --Dark-Grayish-Blue: hsl(236, 9%, 61%);
+  //--Dark-Grayish-Blue: hsl(236, 9%, 61%);
   --Very-Dark-Grayish-Blue: hsl(235, 19%, 35%);
 
   // VARIABLES COLORES DARK THEME
@@ -16,6 +16,17 @@
   --Dark-Grayish-Blue: hsl(234, 11%, 52%);
   --DCVery-Dark-Grayish-Blue: hsl(233, 14%, 35%);
   --DVery-Dark-Grayish-Blue: hsl(237, 14%, 26%);
+
+  // VARIABLES HOVER
+  --Bright-Blue: hsl(220, 98%, 61%);
+
 }
 
+ body {
+  background-color: var(--Very-Light-Gray);
+}
 
+.dark-theme {
+  color: var(--Very-Light-Gray);
+  background-color: var(--Very-Dark-Blue);
+}
