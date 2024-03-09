@@ -46,13 +46,14 @@ input[type="checkbox"] {
   cursor: pointer; /* Cambia el cursor al pasar sobre el checkbox */
 }
 
-/* Estilo del checkbox cuando está marcado */
+/* ESTILO DEL CHECKBOX CUANDO ESTÁ MARCADO */
 input[type="checkbox"]:checked {
   background-image: linear-gradient(to right, hsl(192, 100%, 67%), hsl(280, 87%, 65%));
 }
 
 .img-fondo {
   position: absolute;
+  width: 100%;
 }
 
 .card {
@@ -78,6 +79,11 @@ input[type="checkbox"]:checked {
   font-family: 'Josefin Sans', sans-serif;
 }
 
+.fuente-10 {
+  font-size: 12px;
+}
+
+/* ESTILOS PARA EL TEMA OSCURO */
 .contenedor-principal-dark {
   background-color: var(--Very-Dark-Desaturated-Blue);
   color: var(--Light-Grayish-Blue);
@@ -97,6 +103,31 @@ input[type="checkbox"]:checked {
   font-size: 50px;
 }
 
-.fuente-10 {
-  font-size: 12px;
+// .input-task {
+//   border: none;
+// }
+
+@media screen and (min-width: 496px) {
+  .img-day-desk {
+    display: block;
+  }
 }
+
+@media screen and (max-width: 497px) {
+  .img-day-mobil {
+   display: block;
+  }
+}
+
+@media screen and (min-width: 496px) and (max-width: 830px) {
+  .card {
+    top: 50px;
+  }
+  .input-task {
+    //border: 1px solid var(--Dark-Grayish-Blue) !important;
+    -webkit-box-shadow: 0px 0px 30px -8px rgba(99,96,99,1);
+    -moz-box-shadow: 0px 0px 30px -8px rgba(99,96,99,1);
+    box-shadow: 0px 0px 30px -8px rgba(99,96,99,1);
+  }
+}
+

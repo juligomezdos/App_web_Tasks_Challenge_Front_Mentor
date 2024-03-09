@@ -17,12 +17,14 @@ export class ToDoDayComponent {
   // ----------------------------------  PROPIEDADES ------------------------------------------
   darkMode: boolean = false;
   darkDay: string = '../../../assets/images/bg-desktop-light.jpg';
+  darkDayMovil: string = '../../../assets/images/bg-mobile-light.jpg';
   darkNightIcon: string = '../../../assets/images/icon-moon.svg';
 
   toggleDarkTheme() {
     this.darkMode = !this.darkMode;
     this.darkDay = this.darkMode ? '../../../assets/images/bg-desktop-dark.jpg' : '../../../assets/images/bg-desktop-light.jpg';
     this.darkNightIcon = this.darkMode ? '../../../assets/images/icon-sun.svg' : '../../../assets/images/icon-moon.svg';
+    this.darkDayMovil = this.darkMode ? '../../../assets/images/bg-mobile-dark.jpg' : '../../../assets/images/bg-mobile-light.jpg';
     this.darkModeChanged.emit(this.darkMode);
   }
 
@@ -99,12 +101,12 @@ export class ToDoDayComponent {
   };
 
   showDeleteButton(index: number) {
-    this.tasks[index].deleteIconTask = true;
-  }
+    this.tasks[index].deleteIconTask = true; // Muestra el boton para eliminar la tarea correspondiente
+  };
 
   hideDeleteButton(index: number) {
-    this.tasks[index].deleteIconTask = false;
-  }
+    this.tasks[index].deleteIconTask = false; // Oculta el boton para eliminar la tarea correspondiente
+  };
 }
 
 
