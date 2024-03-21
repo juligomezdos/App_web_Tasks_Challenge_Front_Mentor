@@ -5,7 +5,6 @@ import { ToDoDayComponent } from './components/to-do-day/to-do-day.component';
 import { FormsModule } from '@angular/forms';
 
 
-
 @Component({
   selector: 'app-root',
   standalone: true,
@@ -13,6 +12,7 @@ import { FormsModule } from '@angular/forms';
   templateUrl: './app.component.html',
   styleUrl: './app.component.scss',
 })
+
 export class AppComponent {
   //@ViewChild(ToDoDayComponent) hijo!: ToDoDayComponent;
 

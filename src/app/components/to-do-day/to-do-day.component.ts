@@ -2,11 +2,12 @@ import { Component, EventEmitter, Output } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { FormsModule } from '@angular/forms';
 import { Task } from '../../../models/tasks.models';
+import { DragDropModule, CdkDragDrop, CdkDropList, CdkDrag, moveItemInArray } from '@angular/cdk/drag-drop';
 
 @Component({
   selector: 'app-to-do-day',
   standalone: true,
-  imports: [CommonModule, FormsModule],
+  imports: [CommonModule, FormsModule, DragDropModule, CdkDropList, CdkDrag ],
   templateUrl: './to-do-day.component.html',
   styleUrls: ['./to-do-day.component.scss']
 })
@@ -107,6 +108,14 @@ export class ToDoDayComponent {
   hideDeleteButton(index: number) {
     this.tasks[index].deleteIconTask = false; // Oculta el boton para eliminar la tarea correspondiente
   };
+
+  drop(event: CdkDragDrop<string>) { // Arrastra y soltar
+    moveItemInArray(this.tasks, event.previousIndex, event.currentIndex);
+  }
 }
+
+
+
+
 
 

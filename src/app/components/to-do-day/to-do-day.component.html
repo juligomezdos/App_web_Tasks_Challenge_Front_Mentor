@@ -3,6 +3,7 @@
   <div class="img-fondo">
     <img [src]="darkDay" class="w-100 img-day-desk inactive" alt="">
 
+
     <!-- Imagen alternativa que se muestra en pantallas pequeñas (máximo 496px) -->
     <img [src]="darkDayMovil" class="w-100 img-day-mobil inactive" alt="">
   </div>
@@ -20,9 +21,9 @@
 
       <!-- TAREAS -->
       <div class="container inferior-card rounded-1 shadow-lg" [ngClass]="{ 'contenedor-principal-dark': darkMode }">
-        <ul>
-          <li class="d-flex w-100 p-2 borde-delgado align-items-center" *ngFor="let task of tasks; let index = index" (mouseover)="showDeleteButton(index)" (mouseleave)="hideDeleteButton(index)">
-            <input class="p-2" type="checkbox" [(ngModel)]="task.check"  >
+        <ul class="container-list rounded-1" cdkDropList (cdkDropListDropped)="drop($event)">
+          <li class="d-flex w-100 p-2 borde-delgado align-items-center task-list" *ngFor="let task of tasks; let index = index" (mouseover)="showDeleteButton(index)" (mouseleave)="hideDeleteButton(index)" cdkDrag [ngClass]="{ 'dark-mode-list-item': darkMode }">
+            <input class="p-2"  type="checkbox" [(ngModel)]="task.check" >
             <p [ngClass]="{ 'completed': task.completed }" class="p-2">{{ task.description }}</p>
             <button class=" inactive ms-auto p-2 border border-0" (click)="deleteTask(index)" [ngClass]="{ 'active': task.deleteIconTask, 'Dark-Grayish-Blue': darkMode }">X</button>
          </li>
@@ -42,3 +43,4 @@
     </div>
   </div>
 </div>
+

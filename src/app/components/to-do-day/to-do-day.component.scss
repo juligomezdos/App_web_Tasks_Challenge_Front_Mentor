@@ -75,7 +75,7 @@ input[type="checkbox"]:checked {
 
 .contenedor-principal {
   background-color: var(--Very-Light-Gray);
-  font-size: 18px;
+  font-size: 1.3rem;
   font-family: 'Josefin Sans', sans-serif;
 }
 
@@ -103,9 +103,49 @@ input[type="checkbox"]:checked {
   font-size: 50px;
 }
 
-// .input-task {
-//   border: none;
-// }
+/* ESTILOS PARA EL DRAG AND DROP */
+
+.container-list {
+  max-width: 100%;
+  display: block;
+  overflow: hidden;
+}
+
+.task-list {
+  cursor: pointer;
+  background: var(--Very-Light-Gray);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.cdk-drag-animating {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.container-list .cdk-drop-list-dragging .task-list:not(.cdk-drag-placeholder) {
+  transition: transform 250ms cubic-bezier(0, 0, 0.2, 1);
+}
+
+.cdk-drag-preview {
+  max-width: 440px;
+  box-sizing: border-box;
+  border-radius: 4px;
+  box-shadow: 0 5px 5px -3px rgba(0, 0, 0, 0.2),
+              0 8px 10px 1px rgba(0, 0, 0, 0.14),
+              0 3px 14px 2px rgba(0, 0, 0, 0.12);
+}
+
+.cdk-drag-placeholder {
+  opacity: 0;
+}
+
+.dark-mode-list-item {
+  background-color: var(--Very-Dark-Desaturated-Blue);
+  color: var(--Light-Grayish-Blue);
+}
+
 
 @media screen and (min-width: 496px) {
   .img-day-desk {
