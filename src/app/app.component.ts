@@ -1,16 +1,20 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
-import { RouterOutlet } from '@angular/router';
+import { RouterOutlet, RouterLink } from '@angular/router';
 import { ToDoDayComponent } from './components/to-do-day/to-do-day.component';
 import { FormsModule } from '@angular/forms';
+import { LoginComponent } from './auth/login/login.component';
+import { SigInComponent } from './auth/sig-in/sig-in.component';
+import { HttpClientModule } from '@angular/common/http';
+
 
 
 @Component({
-  selector: 'app-root',
-  standalone: true,
-  imports: [CommonModule, RouterOutlet, ToDoDayComponent, FormsModule],
-  templateUrl: './app.component.html',
-  styleUrl: './app.component.scss',
+    selector: 'app-root',
+    standalone: true,
+    templateUrl: './app.component.html',
+    styleUrl: './app.component.scss',
+    imports: [CommonModule, RouterOutlet, ToDoDayComponent, FormsModule, LoginComponent, SigInComponent, RouterOutlet, RouterLink, HttpClientModule]
 })
 
 export class AppComponent {

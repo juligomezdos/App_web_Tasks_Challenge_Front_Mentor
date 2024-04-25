@@ -7,7 +7,7 @@ import { DragDropModule, CdkDragDrop, CdkDropList, CdkDrag, moveItemInArray } fr
 @Component({
   selector: 'app-to-do-day',
   standalone: true,
-  imports: [CommonModule, FormsModule, DragDropModule, CdkDropList, CdkDrag ],
+  imports: [CommonModule, FormsModule, DragDropModule, CdkDropList, CdkDrag],
   templateUrl: './to-do-day.component.html',
   styleUrls: ['./to-do-day.component.scss']
 })
